@@ -37,3 +37,91 @@
     transform: translateY(0px);
   }
 }
+
+.header{
+  background-color: royalblue;
+  border: 2px solid red;
+}
+.HeaderTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 60px;
+}
+.demoStreaming{
+  color: white;
+}
+.popularTitles{
+  color: white;
+  background-color: rgb(56, 53, 53);
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+.connexion{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 10px;
+}
+.button{
+  color: white;
+  background-color: rgb(56, 53, 53);
+}
+
+.homme{
+  height: 800px;
+  color: aqua;
+  border: 2px solid blue;
+}
+
+.SeriesMovies{
+  display: flex;
+  margin-right: 60%;
+  margin-left: 10%;
+  height: 350px;
+  border: 2px solid orange;
+}
+.seriesContainer{
+  position: relative;
+  border: 2px solid red;
+  background-color: black;
+  margin-left: 50px;
+  margin-top: 60px;
+  width: 150px;
+  height: auto;
+
+}
+.series{
+  position: absolute;
+  background-color: red;
+  bottom: 0;
+}
+.moviesContainer{
+  position: relative;
+  border: 2px solid red;
+  background-color: black;
+  width: 150px;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 60px;
+}
+.movies{
+  position: absolute;
+  background-color: red;
+  bottom: 0;
+}
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: aliceblue;
+  background-color: black;
+  border: 2px solid red;
+}
