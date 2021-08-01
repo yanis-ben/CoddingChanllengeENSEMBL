@@ -1,33 +1,38 @@
 import { ActionType } from "../actions-type/actions-type"
-import { StreamingType, StreamingDispatchType} from "../../interfaces/myInterface"
+import { StreamingDispatchType, IStreamingState} from "../../interfaces/StreamingItf"
 
 
 
-interface  IinitialeState {
-    isLoading: boolean,
-    streaming?:  StreamingType
+
+const  InitialeState : IStreamingState = {
+    isLoading: false,
+    streaming: { 
+        entries:[],
+        total: 0
+    },
+    error: null,
 }
 
-const  defaultState : IinitialeState = {
-    isLoading: false
-}
 
-
-const reducer = (state = defaultState, action: StreamingDispatchType) : IinitialeState =>{
+const reducer = (state = InitialeState, action: StreamingDispatchType) : IStreamingState =>{
     switch (action.type){
-        case ActionType.FAIL:
+        case ActionType.GET_STREAMING_LOADING:
             return {
-                isLoading: false,
-            }
-        case ActionType.LOADING:
-            return {
+                ...state,
                 isLoading: true,
-            }
+            } 
         case ActionType.GET_STREAMING_SUCCESS:
-        return {
-                isLoading: true,
-                streaming: action.payload
-        }
+            return {
+                ...state,
+                    isLoading: false,
+                    streaming: action.payload
+            }
+        case ActionType.GET_STREAMING_FAIL:
+            return {
+                ...state,
+                isLoading: false,
+                error: action.error
+            }
         default:
             return state;
     }
